@@ -1,0 +1,16 @@
+Django notes
+
+django-admin startproject DjangoProject  -------create Django Project
+py manage.py startapp MyApp  ------create app
+python manage.py runserver ---------run django app
+
+migrate ----we can do fuct related to databse
+
+admin module is highly configurable
+
+class - makemigrations - migrate - 
+
+>>> notes.objects.exclude(title__icontains="xyz") get info exclude xyz
+>>> notes.objects.filter(title__startswith="x")  to get info start with xyz
+ >>> notes.objects.filter(title__icontains="xyz")  to get info which has record name xyz
+ notes.objects.all()
