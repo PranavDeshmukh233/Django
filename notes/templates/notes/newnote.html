@@ -1,0 +1,8 @@
+{% extends 'base.html' %}{% block content%}
+<form action="{% url 'newnote' %}" method="post">
+  {% csrf_token %} {{form}}
+  <button type="submit" class="btn btn-primary my-5">Button bhai</button>
+</form>
+{% if form.error %}
+<div class="alert alert-danger my-5">{{form.error.title.astext}}</div>
+{% endif %} {% endblock%}

@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import Http404
 from .models import notes
-from django.views.generic import ListView,DeleteView
+from django.views.generic import ListView,DetailView,CreateView
 # Create your views here.
 # def list(request):
 #     all_notes=notes.objects.all()
@@ -20,7 +20,13 @@ class NotesListView(ListView):
     model = notes
     context_object_name= "notes"
 
-class DetailView(DeleteView):
+class DetailView(DetailView):
     template_name="notes/detail.html"
     model=notes
     context_object_name="note"
+
+class CreateView(CreateView):
+    template_name="notes/newnote.html"
+    model=notes
+    fields=['title','text']
+    success_url="/smart/notelist"
