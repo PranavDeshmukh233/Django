@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import Http404
 from .models import notes
 from django.views.generic import ListView,DetailView,CreateView
+from .form import NotesForm
 # Create your views here.
 # def list(request):
 #     all_notes=notes.objects.all()
@@ -30,3 +31,6 @@ class CreateView(CreateView):
     model=notes
     fields=['title','text']
     success_url="/smart/notelist"
+    form_class='NotesForm'
+
+
